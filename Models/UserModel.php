@@ -96,6 +96,9 @@ class UserModel extends db
         } else {
             return $this->conn->error;
         }
+        // var_dump($this->conn->query($query));
+        // echo $this->conn->error;
+        // die;
         return 0;
     }
 

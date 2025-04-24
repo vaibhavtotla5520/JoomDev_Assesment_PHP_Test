@@ -13,7 +13,7 @@ if (!isset($_SESSION['User']['id']) && empty($_SESSION['User']['id'])) {
         <!-- /. ROW  -->
         <hr />
         <nav class="navbar navbar-light bg-light">
-            <?php if (in_array('SA', explode(',', $_SESSION['User']['roles']))) {
+            <?php if (in_array('AD', explode(',', $_SESSION['User']['roles'])) || in_array('SA', explode(',', $_SESSION['User']['roles']))) {
             ?>
                 <button class="btn btn-success my-2 my-sm-0" data-toggle="modal" data-target="#create_user">CREATE</button>
             <?php } ?>

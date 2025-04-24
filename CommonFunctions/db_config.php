@@ -6,7 +6,7 @@ class db
   public function create_conn()
   {
     if (!$this->conn) {
-      $this->conn = new mysqli('localhost', 'root', '', 'php_assesment_test');
+      $this->conn = new mysqli('localhost', 'root', '1234', 'test');
       if ($this->conn->connect_error) {
         die("Connection failed: " . $this->conn->connect_error);
       }
@@ -49,6 +49,8 @@ class db
       task_name VARCHAR(25) NOT NULL,
       task_start_time DATETIME NOT NULL,
       task_stop_time DATETIME NOT NULL,
+      task_description TEXT NOT NULL,
+      task_notes TEXT NOT NULL,
       task_created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );";
     if ($this->conn->query($sql) === TRUE) {
